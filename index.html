@@ -1,1 +1,14 @@
 hello world
+
+vue3打包的代码需要后端Nginx做代理才能运行
+
+nginx的配置方式如下：
+
+        location / {
+            root   vuetest\dist; 
+            index  index.html index.htm;
+        }
+
+         location /api{
+            proxy_pass  http://xxx.xxx.xxx.xxx.com/;    #需要代理的IP地址
+         }
